@@ -94,3 +94,8 @@ Ratio Values Over Time: Plot showing ratio values with anomalies highlighted.
 Sensor Data with Anomalies: Plot of sensor data with anomalies marked.
 Histogram of Metric Values: Histogram showing the distribution of metric values.
 Box Plot by Hour: Box plot of metric values grouped by hour.
+
+# Running streamlit interface
+save python file such that your directories match.
+Run command in the terminal :
+streamlit run file_name.py
