@@ -5,8 +5,8 @@ pip install streamlit pandas numpy openpyxl pytz
 
 # We have two files included preprocess1.py and last.py:
 
-The preprocess1 file takes in a raw data csv file as an input and returns a preprocessed file with :
-***Data Preprocessing***
+**The preprocess file takes in a raw data csv file as an input and returns a preprocessed file with :**
+
 1. *create_df*: Reads the sensor data from an Excel file and returns a DataFrame.
 2. *df_splitter*: Splits the 'sensor_data' column in the DataFrame into individual columns.
 3. *break_sensor_data*: Extracts the sensor data (acceleration, gyroscope, and magnetometer) from the split DataFrame.
