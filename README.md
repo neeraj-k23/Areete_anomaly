@@ -63,11 +63,13 @@ Select Window Type and Value:
 Choose between short and long window types.
 For short windows, select the hour window (1, 2, 3, 4, 6).
 For long windows, select the hour window and number of days.
+
 Anomaly Detection:
 
 Set the threshold for anomaly detection (1.1, 1.2, 1.3, 1.4).
 View the plots showing ratio values over time and anomalies.
-Aggregation Functions
+
+**Aggregation Functions**
 Mean: Calculate the average value.
 Max: Find the maximum value.
 Min: Find the minimum value.
@@ -86,7 +88,8 @@ Peak Count: Number of local peaks.
 Median Absolute Deviation: Median of absolute deviations from the median.
 Zero Crossing Rate: Rate of sign changes in the series.
 Count Percentile Anomaly: Count of values outside the 5th and 95th percentiles.
-Visualization
+
+**Visualization**
 Ratio Values Over Time: Plot showing ratio values with anomalies highlighted.
 Sensor Data with Anomalies: Plot of sensor data with anomalies marked.
 Histogram of Metric Values: Histogram showing the distribution of metric values.
