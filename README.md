@@ -17,6 +17,7 @@ pip install streamlit pandas numpy openpyxl pytz
 8. *preprocess1*: Applies the above preprocessing steps to the input DataFrame.
 9. *preprocess2*: Creates a new DataFrame with the resultant magnitudes of the sensor data.
 10. *preprocess3*: Applies additional transformations like first-order difference and Fast Fourier Transform (FFT) to the preprocessed data.
+
 ***Time-Series Processing***
 11. *process_with_time*: Assigns timestamps to the preprocessed data and categorizes the time of day.
 
