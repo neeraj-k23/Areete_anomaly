@@ -3,9 +3,9 @@
 # Install the necessary libraries (if not already installed):
 pip install streamlit pandas numpy openpyxl pytz
 
-# We have two files included preprocess1.py and last.py:
+# We have included two types of files process.py and other python files.
 
-**The preprocess file takes in a raw data csv file as an input and returns a preprocessed file with :**
+**The process file takes in a raw data csv file as an input and returns a preprocessed file with :**
 
 1. *create_df*: Reads the sensor data from an Excel file and returns a DataFrame.
 2. *df_splitter*: Splits the 'sensor_data' column in the DataFrame into individual columns.
@@ -20,6 +20,61 @@ pip install streamlit pandas numpy openpyxl pytz
 
 ***Time-Series Processing***
 11. *process_with_time*: Assigns timestamps to the preprocessed data and categorizes the time of day.
+
+# Ratio.py
+
+Anomaly Detection Algorithm
+The application uses a ratio-based anomaly detection algorithm. Anomalies are identified if the ratio of the current value to the hourly mean exceeds a threshold of 1.4 or falls below 0.6. These points are highlighted on the graph for easy identification.
+Using the App
+Upload CSV File:
+
+Click on the "Upload your CSV file" button.
+Select your CSV file containing the sensor data.
+Filter Data by Date and Time:
+
+Use the date and time pickers to specify the start and end date and time for the data you want to analyze.
+Select Sensor and Axis:
+
+In the sidebar, select the sensor type (Accelerometer, Magnetometer, Gyroscope, Other).
+Select the axis (x, y, z, res) for the selected sensor type.
+Choose the specific column for analysis from the dropdown.
+Select Metric:
+
+Choose the metric you want to analyze (Mean, Max, Min, etc.).
+Specify Current Date and Time:
+
+Input the current date and time to find the closest time in the data.
+Choose Analysis Window:
+
+Select either a short-term (hourly) or long-term (daily) analysis window.
+Specify the duration for the selected window type.
+View Results:
+
+The app will display an interactive Plotly chart with the analyzed data.
+Anomalies will be marked on the graph based on the specified thresholds.
+Code Explanation
+Metric Functions
+A set of functions to calculate various metrics from the sensor data, such as mean, max, min, energy, etc.
+
+Helper Functions
+create_df: Reads the CSV file, converts the 'time' column to datetime, and localizes it to the 'Asia/Kolkata' timezone.
+filter_time_window: Filters the data within the specified start and end datetime range.
+find_closest_time: Finds the closest time in the dataset to a specified current date and time.
+filter_current_time_window: Filters the data within the short-term or long-term window relative to the closest time.
+calculate_hourly_means: Calculates the hourly mean values for the specified column.
+calculate_10min_means: Calculates the mean values for 10-minute intervals.
+group_columns: Groups the columns into accelerometer, magnetometer, gyroscope, and other columns.
+get_axis_columns: Retrieves the columns for the specified axis (x, y, z, or res).
+detect_anomalies: Detects anomalies based on the ratio of the current value to the hourly mean.
+Streamlit App
+File Upload: Allows users to upload their CSV file.
+Date and Time Inputs: Users can specify the start and end date and time for filtering the data.
+Sidebar Options: Users can select the sensor type, axis, and column for analysis. They can also choose the metric for analysis.
+Anomaly Detection: The app performs anomaly detection based on the ratio of current values to hourly means and plots these anomalies on the graph.
+Plotting: The app plots the long-term and short-term data along with the detected anomalies using Plotly.
+
+# anom.py
+Similar code with anomaly detection algorithm based on 95th and 5th percentile measure.
 
 # Last.py
 Overview
@@ -102,3 +157,6 @@ Save python file such that your directories match.
 Run command in the terminal :
 
 streamlit run file_name.py
+
+# Streamlit
+This interface can be used for visualization of any developed anomaly detection algorithm by substituting the required code.
